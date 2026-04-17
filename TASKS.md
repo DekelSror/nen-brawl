@@ -23,16 +23,11 @@ Branch naming: `phase-N/short-description` or `task/short-description`.
   - Player (keyboard input), Enemy (AI), HUD (HP bars)
   - Placeholder rectangle graphics, 1 level, win/lose screen
 
-- [x] **Find standardized sprite sheet source** `task/sprite-research`
-  - **Decision: use the sprites already on disk** (`/home/dekel/Downloads/assets/player/`)
-  - 4 color variants (green, red, grey, base) = hero + 3 enemy types covered
-  - 32 frames mapped: idle(f00), crouch/block(f01), attack(f02-f05), jump(f06-f07),
-    hurt(f08-f09), knocked(f16-f17), run/walk(f24-f28)
-  - Non-uniform frame widths (24–43px) — use Phaser manual frame registration
-    (`texture.add(name, 0, x, y, w, h)`) instead of `load.spritesheet()`
-  - Alternatives researched: LPC (top-down RPG style, wrong orientation),
-    OpenGameArt brawler sheets (too minimal / 8-bit), itch.io beat-em-up sheets
-    (mostly paid). Nothing free+complete beats what we already have.
+- [ ] **Find standardized sprite sheet source** `task/sprite-research` ⚠️ BLOCKED — needs human input
+  - Sprites on disk (`/home/dekel/Downloads/assets/player/`) rejected — not suitable
+  - Alternatives researched and also insufficient: LPC (top-down RPG orientation),
+    OpenGameArt brawler sheets (too minimal/8-bit), itch.io (mostly paid)
+  - **Waiting for owner to supply or point to sprite sheets**
 
 - [ ] **Integrate real sprites** `phase-1/sprites`
   - Depends on sprite source decision above
