@@ -18,21 +18,16 @@ Branch naming: `phase-N/short-description` or `task/short-description`.
 
 ## Phase 1 — Local Playable Prototype 🔄
 
-- [~] **Core entity system + prototype gameplay** `phase-1/prototype` PR #3
+- [x] **Core entity system + prototype gameplay** `phase-1/prototype` PR #3
   - Fighter base class (2.5D physics, state machine, combat phases)
   - Player (keyboard input), Enemy (AI), HUD (HP bars)
   - Placeholder rectangle graphics, 1 level, win/lose screen
 
-- [ ] **Find standardized sprite sheet source** `task/sprite-research`
-  - Research OpenGameArt, itch.io, LPC (Liberated Pixel Cup) for fighter sprite sheets
-  - Requirements: transparent background, consistent frame grid (uniform w×h),
-    covers: idle, walk, jump, attack, block, hurt, dead animations
-  - Ideally: multiple color variants or recolorable, CC0 or CC-BY license
-  - Deliverable: recommended source + sheet spec (frame size, row/animation layout)
-  - Note: current candidate (`/home/dekel/Downloads/assets/player/player-spritemap-v9-greenpants.png`)
-    is 368×200, variable-width frames (non-uniform grid) — usable but needs
-    manual frame registration via Phaser texture API. 4 color variants available.
-    Decide: use these or find uniform-grid sheets.
+- [ ] **Find standardized sprite sheet source** `task/sprite-research` ⚠️ BLOCKED — needs human input
+  - Sprites on disk (`/home/dekel/Downloads/assets/player/`) rejected — not suitable
+  - Alternatives researched and also insufficient: LPC (top-down RPG orientation),
+    OpenGameArt brawler sheets (too minimal/8-bit), itch.io (mostly paid)
+  - **Waiting for owner to supply or point to sprite sheets**
 
 - [ ] **Integrate real sprites** `phase-1/sprites`
   - Depends on sprite source decision above
