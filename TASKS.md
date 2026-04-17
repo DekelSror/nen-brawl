@@ -18,21 +18,21 @@ Branch naming: `phase-N/short-description` or `task/short-description`.
 
 ## Phase 1 — Local Playable Prototype 🔄
 
-- [~] **Core entity system + prototype gameplay** `phase-1/prototype` PR #3
+- [x] **Core entity system + prototype gameplay** `phase-1/prototype` PR #3
   - Fighter base class (2.5D physics, state machine, combat phases)
   - Player (keyboard input), Enemy (AI), HUD (HP bars)
   - Placeholder rectangle graphics, 1 level, win/lose screen
 
-- [ ] **Find standardized sprite sheet source** `task/sprite-research`
-  - Research OpenGameArt, itch.io, LPC (Liberated Pixel Cup) for fighter sprite sheets
-  - Requirements: transparent background, consistent frame grid (uniform w×h),
-    covers: idle, walk, jump, attack, block, hurt, dead animations
-  - Ideally: multiple color variants or recolorable, CC0 or CC-BY license
-  - Deliverable: recommended source + sheet spec (frame size, row/animation layout)
-  - Note: current candidate (`/home/dekel/Downloads/assets/player/player-spritemap-v9-greenpants.png`)
-    is 368×200, variable-width frames (non-uniform grid) — usable but needs
-    manual frame registration via Phaser texture API. 4 color variants available.
-    Decide: use these or find uniform-grid sheets.
+- [x] **Find standardized sprite sheet source** `task/sprite-research`
+  - **Decision: use the sprites already on disk** (`/home/dekel/Downloads/assets/player/`)
+  - 4 color variants (green, red, grey, base) = hero + 3 enemy types covered
+  - 32 frames mapped: idle(f00), crouch/block(f01), attack(f02-f05), jump(f06-f07),
+    hurt(f08-f09), knocked(f16-f17), run/walk(f24-f28)
+  - Non-uniform frame widths (24–43px) — use Phaser manual frame registration
+    (`texture.add(name, 0, x, y, w, h)`) instead of `load.spritesheet()`
+  - Alternatives researched: LPC (top-down RPG style, wrong orientation),
+    OpenGameArt brawler sheets (too minimal / 8-bit), itch.io beat-em-up sheets
+    (mostly paid). Nothing free+complete beats what we already have.
 
 - [ ] **Integrate real sprites** `phase-1/sprites`
   - Depends on sprite source decision above
